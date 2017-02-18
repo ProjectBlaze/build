@@ -239,11 +239,6 @@ else # !user_variant
   ADDITIONAL_SYSTEM_PROPERTIES += ro.allow.mock.location=1
 endif # !user_variant
 
-ifeq (true,$(strip $(enable_dalvik_lock_contention_logging)))
-  # Enable Dalvik lock contention logging.
-  ADDITIONAL_SYSTEM_PROPERTIES += dalvik.vm.lockprof.threshold=500
-endif # !enable_dalvik_lock_contention_logging
-
 ifeq (true,$(strip $(enable_target_debugging)))
   # Target is more debuggable and adbd is on by default
   ADDITIONAL_SYSTEM_PROPERTIES += ro.debuggable=1
