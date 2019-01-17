@@ -203,7 +203,10 @@ ifeq ($(PRODUCT_NO_BIONIC_PAGE_SIZE_MACRO),true)
 ADDITIONAL_PRODUCT_PROPERTIES += ro.product.build.no_bionic_page_size_macro=true
 endif
 
-user_variant := $(filter user userdebug,$(TARGET_BUILD_VARIANT))
+user_variant := user
+ifeq ($(TARGET_BUILD_VARIANT),eng)
+user_variant :=
+endif
 enable_target_debugging := false
 enable_dalvik_lock_contention_logging := true
 ifneq (,$(user_variant))
