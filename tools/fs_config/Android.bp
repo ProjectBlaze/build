@@ -36,7 +36,6 @@ cc_binary_host {
     shared_libs: [
         "libcutils",
     ],
-    cflags: ["-Werror"],
 }
 
 python_binary_host {
