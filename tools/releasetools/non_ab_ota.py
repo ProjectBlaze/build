@@ -218,6 +218,7 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
 
   date = target_info.GetBuildProp("ro.blaze.build.date")
   version = target_info.GetBuildProp("ro.blaze.version")
+  maintainer = target_info.GetBuildProp("ro.blaze.maintainer")
 
   if target_info.GetBuildProp("ro.product.model") is not None:
     model = target_info.GetBuildProp("ro.product.model")
@@ -225,6 +226,7 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
     script.Print("           Project Blaze for %s"%(model));
     script.Print("               BY: Aditya Singh                ");
     script.Print("   VERSION: %s"%(version));
+    script.Print("   MAINTAINED BY: %s"%(maintainer));
     script.Print("   COMPILED ON: %s"%(date));
     script.Print("***********************************************");
   else:
@@ -233,6 +235,7 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
     script.Print("           Project Blaze for %s"%(name));
     script.Print("               BY: Aditya Singh                ");
     script.Print("   VERSION: %s"%(version));
+    script.Print("   MAINTAINED BY: %s"%(maintainer));
     script.Print("   COMPILED ON: %s"%(date));
     script.Print("***********************************************");
 
